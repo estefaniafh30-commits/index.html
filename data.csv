@@ -1,95 +1,79 @@
-,,,,,,,,,,,,,,
-,Carrera de Desarrollo Full Stack,Precio,Porcentaje,Queda a favor,,Carrera Data Scientist (2 cursos),Precio,Porcentaje,Queda a favor,,Carrera Data Analytics,Precio,Porcentaje,Queda a favor
-,React Js,"77.900,00","16,79%",TRUE,,Data Science,"210.000,00","70,02%",TRUE,,Procesamiento de Datos en Excel,"59.800,00","28,54%",FALSE
-,Javascript,"89.900,00","19,38%",FALSE,,Data Analytics,"89.900,00","29,98%",TRUE,,Tableau,"59.800,00","28,54%",FALSE
-,Desarrollo Web,"77.900,00","16,79%",FALSE,,,,,,,Data Analytics,"89.900,00","42,91%",TRUE
-,Programación Backend,"218.200,00","47,04%",TRUE,,,,,,,,,,
-,Total,"463.900,00","100,00%",,,Total,"299.900,00","100,00%",,,Total,"209.500,00","100,00%",
-,,,,"330.811,00",,,,,,,,,,"224.825,00"
-,VALOR DE LA INSCRIPCIÓN,,,"73.312,00",,VALOR DE LA INSCRIPCIÓN,,,"335.608,00",,VALOR DE LA INSCRIPCIÓN,,,"212.787,00"
-,VALOR ABONADO (si es con TC es el total),,,"73.312,00",,VALOR ABONADO (si es con TC es el total),,,"335.608,00",,VALOR ABONADO (si es con TC es el total),,,"212.787,00"
-,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,46.794,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,335.608,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,91.311
-,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,
-,Carrera de Desarrollo Frontend React,Precio,Porcentaje,Queda a favor,,Carrera de Product Marketing	,Precio,Porcentaje,Queda a favor,,Carrera de Diseño UX Writing,Precio,Porcentaje,Queda a favor
-,React Js,"77.900,00","31,71%",TRUE,,Community Manager & Publicidad,"77.900,00","26,54%",FALSE,,Diseño UX/UI,"89.900,00","34,89%",TRUE
-,Javascript,"89.900,00","36,59%",TRUE,,Product Manager,"77.900,00","26,54%",TRUE,,Diseño UX/UI Avanzado,"89.900,00","34,89%",TRUE
-,Desarrollo Web,"77.900,00","31,71%",FALSE,,Customer Experience (CX),"77.900,00","26,54%",TRUE,,UX Writing,"77.900,00","30,23%",TRUE
-,,,,,,Inbound Marketing,"59.800,00","20,37%",TRUE,,,,,
-,Total,"245.700,00","100,00%",,,Total,"293.500,00","100,00%",,,Total,"257.700,00","100,00%",
-,,,,"392.600,00",,,,,"106.760,00",,,,,
-,VALOR DE LA INSCRIPCIÓN,,,"2,00",,VALOR DE LA INSCRIPCIÓN,,,"10.000,00",,VALOR DE LA INSCRIPCIÓN,,,"2.327,00"
-,VALOR ABONADO (si es con TC es el total),,,"396,00",,VALOR ABONADO (si es con TC es el total),,,"10.000,00",,VALOR ABONADO (si es con TC es el total),,,"2.327,00"
-,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,395,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,7.346,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,2.327
-,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,
-,Carrera de Marketing digital,Precio,Porcentaje,Queda a favor,,Carrera de Product Web,Precio,Porcentaje,Queda a favor,,Carrera de Desarrollo UX/UI,Precio,Porcentaje,Queda a favor
-,Community Manager & Publicidad,"77.900,00","33,33%",FALSE,,Product Manager,"77.900,00","31,71%",TRUE,,Diseño UX/UI,"89.900,00","26,79%",TRUE
-,MKT: Publicidad en Redes Avanzado,"77.900,00","33,33%",TRUE,,Diseño UX/UI,"89.900,00","36,59%",TRUE,,Diseño UX/UI Avanzado,"89.900,00","26,79%",TRUE
-,Growth Marketing,"77.900,00","33,33%",TRUE,,Desarrollo Web,"77.900,00","31,71%",FALSE,,Photoshop e Illustrator,"77.900,00","23,21%",TRUE
-,,,,,,,,,,,Desarrollo Web,"77.900,00","23,21%",TRUE
-,Total,"233.700,00","100,00%",,,Total,"245.700,00","100,00%",,,Total,"335.600,00","100,00%",
-,,,,"182.520,00",,,,,,,,,,
-,VALOR DE LA INSCRIPCIÓN,,,"10.000,00",,VALOR DE LA INSCRIPCIÓN,,,"10.000,00",,VALOR DE LA INSCRIPCIÓN,,,"10.000,00"
-,VALOR ABONADO (si es con TC es el total),,,"10.000,00",,VALOR ABONADO (si es con TC es el total),,,"10.000,00",,VALOR ABONADO (si es con TC es el total),,,"10.000,00"
-,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,6.667,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,6.829,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,10.000
-,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,
-,Carrera de Desarrollo Backend,Precio,Porcentaje,Queda a favor,,Carrera de Desarrollo Frontend Angular,Precio,Porcentaje,Queda a favor,,Carrera de Desarrollo de Aplicaciones,Precio,Porcentaje,Queda a favor
-,Javascript,"89.900,00","22,29%",FALSE,,Desarrollo Web,"77.900,00","31,71%",FALSE,,Desarrollo Web,"77.900,00","22,85%",TRUE
-,SQL,"95.200,00","23,61%",FALSE,,Javascript,"89.900,00","36,59%",FALSE,,Javascript,"89.900,00","26,37%",TRUE
-,Programación Backend,"218.200,00","54,10%",TRUE,,Angular,"77.900,00","31,71%",TRUE,,React Js,"77.900,00","22,85%",TRUE
-,,,,,,,,,,,Desarrollo de Aplicaciones,"95.200,00","27,93%",TRUE
-,Total,"403.300,00","100,00%",,,Total,"245.700,00","100,00%",,,Total,"340.900,00","100,00%",
-,,,,,,,,,,,,,,
-,VALOR DE LA INSCRIPCIÓN,,,"290.039,00",,VALOR DE LA INSCRIPCIÓN,,,"95.259,00",,VALOR DE LA INSCRIPCIÓN,,,
-,VALOR ABONADO (si es con TC es el total),,,"290.039,00",,VALOR ABONADO (si es con TC es el total),,,"95.259,00",,VALOR ABONADO (si es con TC es el total),,,
-,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,156.922,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,30.202,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,0
-,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,
-,Carrera de Diseño Ux Research,Precio,Porcentaje,Queda a favor,,Carrera de Product Design (4 cursos),Precio,Porcentaje,Queda a favor,,Carrera de Marketing en Redes,Precio,Porcentaje,Queda a favor
-,Diseño UX/UI,"89.900,00","34,89%",TRUE,,Diseño Ux/Ui,"89.900,00","27,78%",TRUE,,Community Manager & Publicidad,"77.900,00","33,33%",FALSE
-,Diseño UX/UI Avanzado,"89.900,00","34,89%",TRUE,,Prototipado (Figma y Adobe XD),"77.900,00","24,07%",FALSE,,Fotografía para RRSS,"77.900,00","33,33%",TRUE
-,Ux Research,"77.900,00","30,23%",TRUE,,UI,"77.900,00","24,07%",TRUE,,Copywriting,"77.900,00","33,33%",TRUE
-,,,,,,Product Manager,"77.900,00","24,07%",TRUE,,,,,
-,Total,"257.700,00","100,00%",,,Total,"323.600,00","100,00%",,,Total,"233.700,00","100,00%",
-,,,,,,,,,,,,,,
-,VALOR DE LA INSCRIPCIÓN,,,"293.313,00",,VALOR DE LA INSCRIPCIÓN,,,"307.272,00",,VALOR DE LA INSCRIPCIÓN,,,"149.149,00"
-,VALOR ABONADO (si es con TC es el total),,,"293.313,00",,VALOR ABONADO (si es con TC es el total),,,"307.272,00",,VALOR ABONADO (si es con TC es el total),,,"149.149,00"
-,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,293.313,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,233.303,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,99.433
-,,,,,,,,,,,,,,
-,,,,,,,,,,,,,,
-,Carrera de Producto,Precio,Porcentaje,Queda a favor,,Carrera de Diseño UX/UI,Precio,Porcentaje,Queda a favor,,"Carrera de Data Scientist (nueva, 4 cursos)",Precio,Porcentaje,Queda a favor
-,Product Manager,"77.900,00","50,00%",FALSE,,Diseño UX/UI,"89.900,00","26,79%",TRUE,,Data Analytics,"89.900,00","20,89%",TRUE
-,E-commerce,"77.900,00","50,00%",FALSE,,Diseño UX/UI Avanzado,"89.900,00","26,79%",TRUE,,Data Science I: Fundamentos para la Ciencia de Datos,"128.800,00","29,93%",TRUE
-,,,,,,UX Writing,"77.900,00","23,21%",TRUE,,Data Science II: Machine Learning para la Ciencia de Datos,"151.800,00","35,28%",TRUE
-,,,,,,UX Research,"77.900,00","23,21%",TRUE,,Data Science III: NLP & Deep Learning aplicado a Ciencia de Datos,"59.800,00","13,90%",TRUE
-,Total,"155.800,00","100,00%",,,Total,"335.600,00","100,00%",,,Total,"430.300,00","100,00%",
-,VALOR DE LA INSCRIPCIÓN,,,"145.000,00",,VALOR DE LA INSCRIPCIÓN,,,,,VALOR DE LA INSCRIPCIÓN,,,
-,,,,,,,,,,,,,,
-,VALOR ABONADO (si es con TC es el total),,,"145.000,00",,VALOR ABONADO (si es con TC es el total),,,,,VALOR ABONADO (si es con TC es el total),,,"395.354,00"
-,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,0,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,0,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,395.354
-,,,,,,,,,,,,,,
-,Carrera de Desarrollo Full Stack,Precio,Porcentaje,Queda a favor,,Carrera de Desarrollo Backend,Precio,Porcentaje,Queda a favor,,Carrera de IA Automation,Precio,Porcentaje,Queda a favor
-,React Js,"259.933,00","16,79%",TRUE,,Javascript,"300.067,00","22,30%",TRUE,,AI automation,"204.000,00","54,11%",FALSE
-,Javascript,"300.067,00","19,39%",TRUE,,SQL,"317.800,00","23,61%",TRUE,,AI Automation Avanzado,"173.000,00","45,89%",TRUE
-,Desarrollo Web,"259.933,00","16,79%",TRUE,,Programación Backend I: Desarrollo Avanzado de Backend,"268.333,00","19,94%",TRUE,,,,,
-,Programación Backend I: Desarrollo Avanzado de Backend,"268.333,00","17,33%",TRUE,,Programación Backend II: Diseño y Arquitectura Backend,"229.833,00","17,08%",TRUE,,,,,
-,Programación Backend II: Diseño y Arquitectura Backend,"229.833,00","14,85%",TRUE,,Programación Backend III: Testing y Escalabilidad Backend,"229.833,00","17,08%",TRUE,,,,,
-,Programación Backend III: Testing y Escalabilidad Backend,"229.833,00","14,85%",TRUE,,,,,,,,,,
-,Total,"1.547.932,00","100,00%",,,Total,"1.345.866,00","100,00%",,,Total,"377.000,00","100,00%",
-,,,,,,,,,,,,,,
-,VALOR DE LA INSCRIPCIÓN,,,"17,00",,VALOR DE LA INSCRIPCIÓN,,,"7.000,00",,VALOR DE LA INSCRIPCIÓN,,,"136.800,00"
-,VALOR ABONADO (si es con TC es el total),,,"17,00",,VALOR ABONADO (si es con TC es el total),,,"7.000,00",,VALOR ABONADO (si es con TC es el total),,,"136.800,00"
-,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,17,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,7.000,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,62.778
-,,,,,,,,,,,,,,
-,Carrera de AI marketing,Precio,Porcentaje,Queda a favor,,Carrera de Product Design (3 cursos),Precio,Porcentaje,Queda a favor,,,,,
-,AI automation,"204.000,00","37,36%",TRUE,,Diseño Ux/Ui,"89.900,00","36,59%",TRUE,,,,,
-,SEO para AI,"138.000,00","25,27%",TRUE,,Prototipado (Figma y Adobe XD),"77.900,00","31,71%",TRUE,,,,,
-,Creación de contenido con AI,"204.000,00","37,36%",TRUE,,Product Manager,"77.900,00","31,71%",TRUE,,,,,
-,,,,,,,,,,,,,,
-,Total,"546.000,00","100,00%",,,Total,"245.700,00","100,00%",,,,,,
-,,,,,,,,,,,,,,
-,VALOR DE LA INSCRIPCIÓN,,,"10,00",,VALOR DE LA INSCRIPCIÓN,,,"1.000,00",,,,,
-,VALOR ABONADO (si es con TC es el total),,,"10,00",,VALOR ABONADO (si es con TC es el total),,,"1.000,00",,,,,
-,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,10,,SALDO A FAVOR (+) / SALDO A PAGAR (-),,,1.000,,,,,
+nombre_carrera,precio_carrera,nombre_curso,precio_curso
+Desarrollo Full Stack,463900,React Js,77900
+Desarrollo Full Stack,463900,Javascript,89900
+Desarrollo Full Stack,463900,Desarrollo Web,77900
+Desarrollo Full Stack,463900,Programación Backend,218200
+Data Scientist (2 cursos),299900,Data Science,210000
+Data Scientist (2 cursos),299900,Data Analytics,89900
+Data Analytics,209500,Procesamiento de Datos en Excel,59800
+Data Analytics,209500,Tableau,59800
+Data Analytics,209500,Data Analytics,89900
+Desarrollo Frontend React,245700,React Js,77900
+Desarrollo Frontend React,245700,Javascript,89900
+Desarrollo Frontend React,245700,Desarrollo Web,77900
+Product Marketing,293500,Community Manager & Publicidad,77900
+Product Marketing,293500,Product Manager,77900
+Product Marketing,293500,Customer Experience (CX),77900
+Product Marketing,293500,Inbound Marketing,59800
+Diseño UX Writing,257700,Diseño UX/UI,89900
+Diseño UX Writing,257700,Diseño UX/UI Avanzado,89900
+Diseño UX Writing,257700,UX Writing,77900
+Marketing Digital,233700,Community Manager & Publicidad,77900
+Marketing Digital,233700,MKT: Publicidad en Redes Avanzado,77900
+Marketing Digital,233700,Growth Marketing,77900
+Product Web,245700,Product Manager,77900
+Product Web,245700,Diseño UX/UI,89900
+Product Web,245700,Desarrollo Web,77900
+Desarrollo UX/UI,335600,Diseño UX/UI,89900
+Desarrollo UX/UI,335600,Diseño UX/UI Avanzado,89900
+Desarrollo UX/UI,335600,Photoshop e Illustrator,77900
+Desarrollo UX/UI,335600,Desarrollo Web,77900
+Desarrollo Backend,403300,Javascript,89900
+Desarrollo Backend,403300,SQL,95200
+Desarrollo Backend,403300,Programación Backend,218200
+Desarrollo Frontend Angular,245700,Desarrollo Web,77900
+Desarrollo Frontend Angular,245700,Javascript,89900
+Desarrollo Frontend Angular,245700,Angular,77900
+Desarrollo de Aplicaciones,340900,Desarrollo Web,77900
+Desarrollo de Aplicaciones,340900,Javascript,89900
+Desarrollo de Aplicaciones,340900,React Js,77900
+Desarrollo de Aplicaciones,340900,Desarrollo de Aplicaciones,95200
+Diseño UX Research,257700,Diseño UX/UI,89900
+Diseño UX Research,257700,Diseño UX/UI Avanzado,89900
+Diseño UX Research,257700,UX Research,77900
+Product Design (4 cursos),323600,Diseño UX/UI,89900
+Product Design (4 cursos),323600,Prototipado (Figma y Adobe XD),77900
+Product Design (4 cursos),323600,UI,77900
+Product Design (4 cursos),323600,Product Manager,77900
+Marketing en Redes,233700,Community Manager & Publicidad,77900
+Marketing en Redes,233700,Fotografía para RRSS,77900
+Marketing en Redes,233700,Copywriting,77900
+Producto,155800,Product Manager,77900
+Producto,155800,E-commerce,77900
+Diseño UX/UI,335600,Diseño UX/UI,89900
+Diseño UX/UI,335600,Diseño UX/UI Avanzado,89900
+Diseño UX/UI,335600,UX Writing,77900
+Diseño UX/UI,335600,UX Research,77900
+Data Scientist (nueva - 4 cursos),430300,Data Analytics,89900
+Data Scientist (nueva - 4 cursos),430300,Data Science I: Fundamentos para la Ciencia de Datos,128800
+Data Scientist (nueva - 4 cursos),430300,Data Science II: Machine Learning para la Ciencia de Datos,151800
+Data Scientist (nueva - 4 cursos),430300,Data Science III: NLP & Deep Learning aplicado a Ciencia de Datos,59800
+Desarrollo Full Stack (nueva),1547932,React Js,259933
+Desarrollo Full Stack (nueva),1547932,Javascript,300067
+Desarrollo Full Stack (nueva),1547932,Desarrollo Web,259933
+Desarrollo Full Stack (nueva),1547932,Programación Backend I: Desarrollo Avanzado de Backend,268333
+Desarrollo Full Stack (nueva),1547932,Programación Backend II: Diseño y Arquitectura Backend,229833
+Desarrollo Full Stack (nueva),1547932,Programación Backend III: Testing y Escalabilidad Backend,229833
+Desarrollo Backend (nueva),1345866,Javascript,300067
+Desarrollo Backend (nueva),1345866,SQL,317800
+Desarrollo Backend (nueva),1345866,Programación Backend I: Desarrollo Avanzado de Backend,268333
+Desarrollo Backend (nueva),1345866,Programación Backend II: Diseño y Arquitectura Backend,229833
+Desarrollo Backend (nueva),1345866,Programación Backend III: Testing y Escalabilidad Backend,229833
+IA Automation,377000,AI Automation,204000
+IA Automation,377000,AI Automation Avanzado,173000
+AI Marketing,546000,AI Automation,204000
+AI Marketing,546000,SEO para AI,138000
+AI Marketing,546000,Creación de contenido con AI,204000
+Product Design (3 cursos),245700,Diseño UX/UI,89900
+Product Design (3 cursos),245700,Prototipado (Figma y Adobe XD),77900
+Product Design (3 cursos),245700,Product Manager,77900
