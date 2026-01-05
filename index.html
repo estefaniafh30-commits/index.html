@@ -1,10 +1,449 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content="0; url=calculadora-saldo.html" />
-  <title>Calculadora</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Saldo a Favor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f5f7fa;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 32px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 28px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 32px;
+            font-size: 14px;
+        }
+
+        .section {
+            margin-bottom: 28px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #34495e;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        input[type="number"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .cursos-container {
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            padding: 16px;
+            max-height: 300px;
+            overflow-y: auto;
+            background: #fafbfc;
+        }
+
+        .curso-item {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #e1e8ed;
+            transition: all 0.2s;
+        }
+
+        .curso-item:hover {
+            border-color: #3498db;
+            box-shadow: 0 2px 4px rgba(52, 152, 219, 0.1);
+        }
+
+        .curso-item label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            cursor: pointer;
+            accent-color: #3498db;
+        }
+
+        .curso-info {
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .curso-nombre {
+            font-weight: 500;
+            color: #2c3e50;
+        }
+
+        .curso-precio {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .resultado {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 24px;
+            border-radius: 8px;
+            margin-top: 24px;
+            display: none;
+        }
+
+        .resultado.visible {
+            display: block;
+        }
+
+        .resultado-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .resultado-row:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .resultado-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .resultado-valor {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .resultado-valor.grande {
+            font-size: 32px;
+        }
+
+        .btn-copiar {
+            width: 100%;
+            padding: 14px;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 16px;
+            transition: all 0.2s;
+        }
+
+        .btn-copiar:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+
+        .btn-copiar:active {
+            transform: translateY(0);
+        }
+
+        .error {
+            background: #fee;
+            color: #c33;
+            padding: 16px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #c33;
+            display: none;
+        }
+
+        .error.visible {
+            display: block;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: #7f8c8d;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #95a5a6;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Calculadora de Saldo a Favor</h1>
+        <p class="subtitle">Cálculo de saldo proporcional para cambio de carrera a cursos</p>
+
+        <div class="error" id="error"></div>
+        <div class="loading" id="loading">Cargando datos...</div>
+
+        <div id="app" class="hidden">
+            <div class="section">
+                <label for="monto">Monto Abonado ($)</label>
+                <input type="number" id="monto" placeholder="Ej: 50000" min="0" step="0.01">
+            </div>
+
+            <div class="section">
+                <label for="carrera">Carrera Origen</label>
+                <select id="carrera">
+                    <option value="">Seleccionar carrera...</option>
+                </select>
+            </div>
+
+            <div class="section" id="cursosSection" style="display: none;">
+                <label>Cursos a los que cambia (seleccionar uno o varios)</label>
+                <div class="cursos-container" id="cursosContainer">
+                    <div class="empty-state">Selecciona una carrera para ver sus cursos</div>
+                </div>
+            </div>
+
+            <div class="resultado" id="resultado">
+                <div class="resultado-row">
+                    <span class="resultado-label">Monto abonado</span>
+                    <span class="resultado-valor" id="montoAbonado">$0</span>
+                </div>
+                <div class="resultado-row">
+                    <span class="resultado-label">Porcentaje aplicado</span>
+                    <span class="resultado-valor" id="porcentajeAplicado">0%</span>
+                </div>
+                <div class="resultado-row">
+                    <span class="resultado-label">Saldo a Favor</span>
+                    <span class="resultado-valor grande" id="saldoFavor">$0</span>
+                </div>
+                <button class="btn-copiar" id="btnCopiar">📋 Copiar Resultado</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let datos = [];
+        let carreras = {};
+
+        async function cargarDatos() {
+            try {
+                const response = await fetch('data.csv');
+                if (!response.ok) throw new Error('No se pudo cargar data.csv');
+                
+                const texto = await response.text();
+                const lineas = texto.trim().split('\n');
+                
+                for (let i = 1; i < lineas.length; i++) {
+                    const linea = lineas[i].trim();
+                    if (!linea) continue;
+                    
+                    const partes = linea.split(',');
+                    if (partes.length !== 4) continue;
+                    
+                    const [nombre_carrera, precio_carrera, nombre_curso, precio_curso] = partes.map(p => p.trim());
+                    
+                    datos.push({
+                        nombre_carrera,
+                        precio_carrera: parseFloat(precio_carrera),
+                        nombre_curso,
+                        precio_curso: parseFloat(precio_curso)
+                    });
+                }
+                
+                datos.forEach(item => {
+                    if (!carreras[item.nombre_carrera]) {
+                        carreras[item.nombre_carrera] = {
+                            precio: item.precio_carrera,
+                            cursos: []
+                        };
+                    }
+                    carreras[item.nombre_carrera].cursos.push({
+                        nombre: item.nombre_curso,
+                        precio: item.precio_curso,
+                        porcentaje: (item.precio_curso / item.precio_carrera) * 100
+                    });
+                });
+                
+                inicializarApp();
+            } catch (error) {
+                mostrarError('Error al cargar los datos: ' + error.message + '. Asegúrate de que data.csv esté en la misma carpeta.');
+            }
+        }
+
+        function mostrarError(mensaje) {
+            document.getElementById('loading').classList.add('hidden');
+            const errorDiv = document.getElementById('error');
+            errorDiv.textContent = mensaje;
+            errorDiv.classList.add('visible');
+        }
+
+        function inicializarApp() {
+            document.getElementById('loading').classList.add('hidden');
+            document.getElementById('app').classList.remove('hidden');
+            
+            const select = document.getElementById('carrera');
+            Object.keys(carreras).sort().forEach(nombreCarrera => {
+                const option = document.createElement('option');
+                option.value = nombreCarrera;
+                option.textContent = nombreCarrera;
+                select.appendChild(option);
+            });
+            
+            document.getElementById('carrera').addEventListener('change', cargarCursos);
+            document.getElementById('monto').addEventListener('input', calcular);
+            document.getElementById('btnCopiar').addEventListener('click', copiarResultado);
+        }
+
+        function cargarCursos() {
+            const carreraSeleccionada = document.getElementById('carrera').value;
+            const container = document.getElementById('cursosContainer');
+            const section = document.getElementById('cursosSection');
+            
+            container.innerHTML = '';
+            
+            if (!carreraSeleccionada) {
+                section.style.display = 'none';
+                document.getElementById('resultado').classList.remove('visible');
+                return;
+            }
+            
+            section.style.display = 'block';
+            
+            const carrera = carreras[carreraSeleccionada];
+            carrera.cursos.forEach((curso, index) => {
+                const div = document.createElement('div');
+                div.className = 'curso-item';
+                
+                const label = document.createElement('label');
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.id = `curso_${index}`;
+                checkbox.dataset.precio = curso.precio;
+                checkbox.dataset.porcentaje = curso.porcentaje;
+                checkbox.addEventListener('change', calcular);
+                
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'curso-info';
+                
+                const nombreSpan = document.createElement('span');
+                nombreSpan.className = 'curso-nombre';
+                nombreSpan.textContent = curso.nombre;
+                
+                const precioSpan = document.createElement('span');
+                precioSpan.className = 'curso-precio';
+                precioSpan.textContent = `$${curso.precio.toLocaleString('es-AR')} (${curso.porcentaje.toFixed(1)}%)`;
+                
+                infoDiv.appendChild(nombreSpan);
+                infoDiv.appendChild(precioSpan);
+                
+                label.appendChild(checkbox);
+                label.appendChild(infoDiv);
+                div.appendChild(label);
+                container.appendChild(div);
+            });
+            
+            calcular();
+        }
+
+        function calcular() {
+            const monto = parseFloat(document.getElementById('monto').value) || 0;
+            const checkboxes = document.querySelectorAll('#cursosContainer input[type="checkbox"]:checked');
+            
+            if (monto === 0 || checkboxes.length === 0) {
+                document.getElementById('resultado').classList.remove('visible');
+                return;
+            }
+            
+            let porcentajeTotal = 0;
+            checkboxes.forEach(cb => {
+                porcentajeTotal += parseFloat(cb.dataset.porcentaje);
+            });
+            
+            const saldoFavor = monto * (1 - porcentajeTotal / 100);
+            
+            document.getElementById('montoAbonado').textContent = `$${monto.toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            document.getElementById('porcentajeAplicado').textContent = `${porcentajeTotal.toFixed(2)}%`;
+            document.getElementById('saldoFavor').textContent = `$${saldoFavor.toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            
+            document.getElementById('resultado').classList.add('visible');
+        }
+
+        function copiarResultado() {
+            const monto = document.getElementById('montoAbonado').textContent;
+            const porcentaje = document.getElementById('porcentajeAplicado').textContent;
+            const saldo = document.getElementById('saldoFavor').textContent;
+            const carrera = document.getElementById('carrera').value;
+            
+            const cursosSeleccionados = Array.from(document.querySelectorAll('#cursosContainer input[type="checkbox"]:checked'))
+                .map(cb => cb.parentElement.querySelector('.curso-nombre').textContent)
+                .join(', ');
+            
+            const texto = `CÁLCULO DE SALDO A FAVOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Carrera origen: ${carrera}
+Cursos destino: ${cursosSeleccionados}
+
+Monto abonado: ${monto}
+Porcentaje aplicado: ${porcentaje}
+SALDO A FAVOR: ${saldo}`;
+            
+            navigator.clipboard.writeText(texto).then(() => {
+                const btn = document.getElementById('btnCopiar');
+                const textoOriginal = btn.textContent;
+                btn.textContent = '✓ Copiado!';
+                setTimeout(() => {
+                    btn.textContent = textoOriginal;
+                }, 2000);
+            });
+        }
+
+        cargarDatos();
+    </script>
 </body>
 </html>
