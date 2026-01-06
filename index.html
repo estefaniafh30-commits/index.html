@@ -52,7 +52,8 @@
         }
 
         input[type="number"],
-        select {
+        select,
+        input[type="text"] {
             width: 100%;
             padding: 12px;
             border: 2px solid #e1e8ed;
@@ -62,7 +63,8 @@
         }
 
         input[type="number"]:focus,
-        select:focus {
+        select:focus,
+        input[type="text"]:focus {
             outline: none;
             border-color: #FF632B;
         }
@@ -223,7 +225,7 @@
 <body>
     <div class="container">
         <h1>Calculadora de Saldo a Favor</h1>
-        <p class="subtitle">Calculadora de saldo a favor en Carreras según monto abonado por el estudiante</p>
+        <p class="subtitle">Cálculo de saldo proporcional para cambio de carrera a cursos</p>
 
         <div class="error" id="error"></div>
         <div class="loading" id="loading">Cargando datos...</div>
@@ -236,13 +238,13 @@
 
             <div class="section">
                 <label for="carrera">Carrera Origen</label>
-                <select id="carrera">
-                    <option value="">Seleccionar carrera...</option>
-                </select>
+                <input type="text" id="carrera" list="carrerasList" placeholder="Escribir o seleccionar carrera..." autocomplete="off">
+                <datalist id="carrerasList">
+                </datalist>
             </div>
 
             <div class="section" id="cursosSection" style="display: none;">
-                <label>Cursos de la carrera (seleccionar uno o varios)</label>
+                <label>Cursos a los que cambia (seleccionar uno o varios)</label>
                 <div class="cursos-container" id="cursosContainer">
                     <div class="empty-state">Selecciona una carrera para ver sus cursos</div>
                 </div>
@@ -260,6 +262,10 @@
                 <div class="resultado-row">
                     <span class="resultado-label">Saldo a Favor</span>
                     <span class="resultado-valor grande" id="saldoFavor">$0</span>
+                </div>
+                <div class="resultado-row">
+                    <span class="resultado-label">Valor para Dash</span>
+                    <span class="resultado-valor" id="valorDash" style="font-family: monospace; font-size: 20px;">0</span>
                 </div>
                 <button class="btn-copiar" id="btnCopiar">📋 Copiar Resultado</button>
             </div>
@@ -326,14 +332,14 @@
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('app').classList.remove('hidden');
             
-            const select = document.getElementById('carrera');
+            const datalist = document.getElementById('carrerasList');
             Object.keys(carreras).sort().forEach(nombreCarrera => {
                 const option = document.createElement('option');
                 option.value = nombreCarrera;
-                option.textContent = nombreCarrera;
-                select.appendChild(option);
+                datalist.appendChild(option);
             });
             
+            document.getElementById('carrera').addEventListener('input', cargarCursos);
             document.getElementById('carrera').addEventListener('change', cargarCursos);
             document.getElementById('monto').addEventListener('input', calcular);
             document.getElementById('btnCopiar').addEventListener('click', copiarResultado);
@@ -377,7 +383,7 @@
                 
                 const precioSpan = document.createElement('span');
                 precioSpan.className = 'curso-precio';
-                precioSpan.textContent = `$${curso.precio.toLocaleString('es-AR')} (${curso.porcentaje.toFixed(1)}%)`;
+                precioSpan.textContent = `${curso.porcentaje.toFixed(1)}%`;
                 
                 infoDiv.appendChild(nombreSpan);
                 infoDiv.appendChild(precioSpan);
@@ -406,10 +412,12 @@
             });
             
             const saldoFavor = monto * (1 - porcentajeTotal / 100);
+            const valorDash = Math.round(saldoFavor);
             
-            document.getElementById('montoAbonado').textContent = `$${monto.toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            document.getElementById('montoAbonado').textContent = `${monto.toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
             document.getElementById('porcentajeAplicado').textContent = `${porcentajeTotal.toFixed(2)}%`;
-            document.getElementById('saldoFavor').textContent = `$${saldoFavor.toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            document.getElementById('saldoFavor').textContent = `${saldoFavor.toLocaleString('es-AR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
+            document.getElementById('valorDash').textContent = valorDash;
             
             document.getElementById('resultado').classList.add('visible');
         }
@@ -418,6 +426,7 @@
             const monto = document.getElementById('montoAbonado').textContent;
             const porcentaje = document.getElementById('porcentajeAplicado').textContent;
             const saldo = document.getElementById('saldoFavor').textContent;
+            const valorDash = document.getElementById('valorDash').textContent;
             const carrera = document.getElementById('carrera').value;
             
             const cursosSeleccionados = Array.from(document.querySelectorAll('#cursosContainer input[type="checkbox"]:checked'))
@@ -427,11 +436,13 @@
             const texto = `CÁLCULO DE SALDO A FAVOR
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Carrera origen: ${carrera}
-Cursos en los que solicita SAF: ${cursosSeleccionados}
+Cursos destino: ${cursosSeleccionados}
 
 Monto abonado: ${monto}
 Porcentaje aplicado: ${porcentaje}
-SALDO A FAVOR: ${saldo}`;
+SALDO A FAVOR: ${saldo}
+
+VALOR PARA DASH: ${valorDash}`;
             
             navigator.clipboard.writeText(texto).then(() => {
                 const btn = document.getElementById('btnCopiar');
