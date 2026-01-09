@@ -69,6 +69,19 @@
             border-color: #FF632B;
         }
 
+        .busqueda-input {
+            margin-bottom: 8px;
+        }
+
+        .select-busqueda {
+            max-height: 250px;
+            overflow-y: auto;
+        }
+
+        select option {
+            padding: 8px;
+        }
+
         .cursos-container {
             border: 2px solid #e1e8ed;
             border-radius: 8px;
@@ -238,9 +251,10 @@
 
             <div class="section">
                 <label for="carrera">Carrera Origen</label>
-                <input type="text" id="carrera" list="carrerasList" placeholder="Escribir o seleccionar carrera..." autocomplete="off">
-                <datalist id="carrerasList">
-                </datalist>
+                <select id="carrera" class="select-busqueda">
+                    <option value="">Seleccionar carrera...</option>
+                </select>
+                <input type="text" id="carreraBusqueda" class="busqueda-input" placeholder="Escribir para buscar..." autocomplete="off">
             </div>
 
             <div class="section" id="cursosSection" style="display: none;">
@@ -332,15 +346,40 @@
             document.getElementById('loading').classList.add('hidden');
             document.getElementById('app').classList.remove('hidden');
             
-            const datalist = document.getElementById('carrerasList');
-            Object.keys(carreras).sort().forEach(nombreCarrera => {
+            const select = document.getElementById('carrera');
+            const todasCarreras = Object.keys(carreras).sort();
+            
+            todasCarreras.forEach(nombreCarrera => {
                 const option = document.createElement('option');
                 option.value = nombreCarrera;
-                datalist.appendChild(option);
+                option.textContent = nombreCarrera;
+                select.appendChild(option);
             });
             
-            document.getElementById('carrera').addEventListener('input', cargarCursos);
-            document.getElementById('carrera').addEventListener('change', cargarCursos);
+            // Búsqueda con filtro
+            const busqueda = document.getElementById('carreraBusqueda');
+            busqueda.addEventListener('input', (e) => {
+                const filtro = e.target.value.toLowerCase();
+                select.innerHTML = '<option value="">Seleccionar carrera...</option>';
+                
+                const carrerasFiltradas = todasCarreras.filter(c => 
+                    c.toLowerCase().includes(filtro)
+                );
+                
+                carrerasFiltradas.forEach(nombreCarrera => {
+                    const option = document.createElement('option');
+                    option.value = nombreCarrera;
+                    option.textContent = nombreCarrera;
+                    select.appendChild(option);
+                });
+                
+                if (carrerasFiltradas.length === 1) {
+                    select.value = carrerasFiltradas[0];
+                    cargarCursos();
+                }
+            });
+            
+            select.addEventListener('change', cargarCursos);
             document.getElementById('monto').addEventListener('input', calcular);
             document.getElementById('btnCopiar').addEventListener('click', copiarResultado);
         }
